@@ -11,3 +11,14 @@ let speed = 2000;
 function randomNum(num) {
   return Math.ceil(Math.random() * num);
 }
+
+// move box function
+function moveBox() {
+  const width = window.innerWidth - 100;
+  const height = window.innerHeight - 100;
+  const randomX = randomNum(width);
+  const randomY = randomNum(height);
+  box.style.top = `${randomX}px`;
+  box.style.left = `${randomY}px`;
+  moves--;
+}
