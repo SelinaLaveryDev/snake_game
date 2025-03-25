@@ -6,6 +6,7 @@ const score = document.querySelector(".score");
 let counter = 0;
 let moves = 100;
 let speed = 2000;
+let size = 100;
 
 // interval function
 let myInterval = setInterval(() => {
@@ -20,8 +21,8 @@ function randomNum(num) {
 
 // move box function
 function moveBox() {
-  const width = window.innerWidth - 100;
-  const height = window.innerHeight - 100;
+  const width = window.innerWidth - size;
+  const height = window.innerHeight - size;
   const randomX = randomNum(width);
   const randomY = randomNum(height);
   box.style.top = `${randomX}px`;
@@ -30,36 +31,47 @@ function moveBox() {
 }
 
 function resizeBox() {
+  console.log("size", size);
   if (moves <= 100 && moves > 90) {
-    box.style.width = "100px";
-    box.style.height = "100px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 90 && moves > 80) {
-    box.style.width = "90px";
-    box.style.height = "90px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 80 && moves > 70) {
-    box.style.width = "80px";
-    box.style.height = "80px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 70 && moves > 60) {
-    box.style.width = "70px";
-    box.style.height = "70px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 60 && moves > 50) {
-    box.style.width = "60px";
-    box.style.height = "60px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 50 && moves > 40) {
-    box.style.width = "50px";
-    box.style.height = "50px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 40 && moves > 30) {
-    box.style.width = "40px";
-    box.style.height = "40px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 30 && moves > 20) {
-    box.style.width = "30px";
-    box.style.height = "30px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 20 && moves > 10) {
-    box.style.width = "20px";
-    box.style.height = "20px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else if (moves <= 10 && moves > 0) {
-    box.style.width = "10px";
-    box.style.height = "10px";
+    size -= 1;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
   } else {
     clearInterval(myInterval);
   }
