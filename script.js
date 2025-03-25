@@ -25,54 +25,18 @@ function moveBox() {
   const height = window.innerHeight - size;
   const randomX = randomNum(width);
   const randomY = randomNum(height);
-  box.style.top = `${randomX}px`;
-  box.style.left = `${randomY}px`;
+  box.style.top = `${randomY}px`;
+  box.style.left = `${randomX}px`;
   moves--;
 }
 
 function resizeBox() {
   console.log("size", size);
-  if (moves <= 100 && moves > 90) {
-    size -= 1;
+  if (moves % 10 === 0) {
+    size -= 10;
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
-  } else if (moves <= 90 && moves > 80) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 80 && moves > 70) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 70 && moves > 60) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 60 && moves > 50) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 50 && moves > 40) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 40 && moves > 30) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 30 && moves > 20) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 20 && moves > 10) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else if (moves <= 10 && moves > 0) {
-    size -= 1;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-  } else {
+  } else if (moves <= 0) {
     clearInterval(myInterval);
   }
 }
