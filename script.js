@@ -7,6 +7,12 @@ let counter = 0;
 let moves = 100;
 let speed = 2000;
 
+// interval function
+let myInterval = setInterval(() => {
+  moveBox();
+  resizeBox();
+}, speed);
+
 // random number function
 function randomNum(num) {
   return Math.ceil(Math.random() * num);
