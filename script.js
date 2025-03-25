@@ -64,3 +64,19 @@ function resizeBox() {
     clearInterval(myInterval);
   }
 }
+
+box.addEventListener("click", function () {
+  // console.log("interval 1", myInterval)
+  counter++;
+  score.innerText = counter;
+  speed -= 250;
+  clearInterval(myInterval);
+  // console.log("interval clear?", myInterval);
+  moveBox();
+  myInterval = setInterval(() => {
+    moveBox();
+    resizeBox();
+  }, speed);
+  // console.log("interval reset?", myInterval);
+  console.log("click event speed", speed);
+});
